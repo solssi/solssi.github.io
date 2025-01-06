@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Simplifying your life with innovative and reliable utility apps designed to make everyday tasks easier. Download now!">
+    <meta name="description" content="Simplifying your life with innovative and reliable utility apps designed to make everyday tasks easier.">
     <title>Screw it Apps</title>
     <style>
         body {
@@ -39,12 +39,13 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            gap: 20px;
+            gap: 40px;
             margin-top: 20px;
         }
 
         .app {
             text-align: center;
+            max-width: 150px;
         }
 
         .app img {
@@ -57,6 +58,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        .app-title {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
         .buttons a {
             display: block;
             text-decoration: none;
@@ -67,7 +74,9 @@
             font-size: 1rem;
             margin: 0 auto;
             transition: background 0.3s ease;
-            width: fit-content;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
         }
 
         .buttons a:hover {
@@ -88,15 +97,17 @@
     <div class="buttons">
         <div class="app">
             <img src="https://play-lh.googleusercontent.com/57z8vLjD24FvUSk_ts3e8KBG75kyu5DEdoGY4w4hhT9OT4Puzga1uaUFOFLJJez4qkGh=w240-h480-rw" alt="Anotador de Truco">
-            <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordetruco" target="_blank">Download Anotador de Truco</a>
+            <div class="app-title">Anotador de Truco</div>
+            <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordetruco" target="_blank">Download</a>
         </div>
         <div class="app">
             <img src="https://play-lh.googleusercontent.com/VL6w01z34s1BubV_HuGy4XZjU5ajf3OirQ87dto5klZ8Hzvitc8l1EzL8MnXC9YcuzIn=w240-h480-rw" alt="Watch It">
-            <a href="https://play.google.com/store/apps/details?id=screwitapps.watchit" target="_blank">Download Watch It</a>
+            <div class="app-title">Watch It</div>
+            <a href="https://play.google.com/store/apps/details?id=screwitapps.watchit" target="_blank">Download</a>
         </div>
     </div>
     <footer>
-        &copy; 2025 Screw it Apps. All rights reserved.
+        &copy; 2016 Screw it Apps. All rights reserved.
     </footer>
 </body>
 </html>
