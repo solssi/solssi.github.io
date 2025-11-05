@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Simplifying your life with innovative and reliable utility apps designed to make everyday tasks easier.">
+    <meta name="description" content="Simplifying your life with innovative and reliable utility apps designed to make everyday moments smoother and more fun.">
     <title>Screw it Apps</title>
     <style>
         body {
@@ -16,7 +16,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
         }
 
@@ -35,12 +35,18 @@
             line-height: 1.6;
         }
 
-        .buttons {
+        .rows {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
             gap: 40px;
             margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 40px;
         }
 
         .app {
@@ -64,7 +70,7 @@
             font-weight: bold;
         }
 
-        .buttons a {
+        .app a {
             display: block;
             text-decoration: none;
             color: #ffffff;
@@ -79,48 +85,67 @@
             box-sizing: border-box;
         }
 
-        .buttons a:hover {
+        .app a:hover {
             background: #e64a19;
         }
 
         footer {
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Screw it Apps</h1>
-        <p>Simplifying your life with innovative and reliable utility apps designed to make everyday tasks easier.</p>
+        <p>Simplifying your life with innovative and reliable utility apps designed to make everyday moments smoother and more fun.</p>
     </header>
-    <div class="buttons">
-        <div class="app">
-            <img src="https://play-lh.googleusercontent.com/57z8vLjD24FvUSk_ts3e8KBG75kyu5DEdoGY4w4hhT9OT4Puzga1uaUFOFLJJez4qkGh=w240-h480-rw" alt="Anotador de Truco">
-            <div class="app-title">Anot. Truco</div>
-            <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordetruco" target="_blank">Download</a>
+
+    <div class="rows">
+        <div class="row">
+            <div class="app">
+                <img src="https://play-lh.googleusercontent.com/57z8vLjD24FvUSk_ts3e8KBG75kyu5DEdoGY4w4hhT9OT4Puzga1uaUFOFLJJez4qkGh=w240-h480-rw" alt="Anotador de Truco">
+                <div class="app-title">Anot. Truco</div>
+                <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordetruco" target="_blank">Download</a>
+            </div>
+            <div class="app">
+                <img src="https://play-lh.googleusercontent.com/JFi09yig0jADGm6tvvHLTuPF2g15XMpICJ4HwiDX_ot3l_IwEoeJkrr4OjgYn1aUiY7YZL96cf9m-SzTa-pO=w480-h960-rw" alt="Anotador de Generala">
+                <div class="app-title">Anot. Generala</div>
+                <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorgenerala" target="_blank">Download</a>
+            </div>
+            <div class="app">
+                <img src="https://play-lh.googleusercontent.com/znHQhqlSXh5PcP6R8iGJVocQ65Vio1hKNy_S4Rh7s-h-PbeDAsAtEEY_AwHCABtpDTJ42M_eJDa2vX6AI9cnvuA=w480-h960-rw" alt="Anotador de Carioca">
+                <div class="app-title">Anot. Carioca</div>
+                <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcarioca" target="_blank">Download</a>
+            </div>
         </div>
-        <div class="app">
-            <img src="https://play-lh.googleusercontent.com/VL6w01z34s1BubV_HuGy4XZjU5ajf3OirQ87dto5klZ8Hzvitc8l1EzL8MnXC9YcuzIn=w240-h480-rw" alt="Watch It">
-            <div class="app-title">Watch It</div>
-            <a href="https://play.google.com/store/apps/details?id=screwitapps.watchit" target="_blank">Download</a>
-        </div>
-        <div class="app">
-            <img src="https://play-lh.googleusercontent.com/JFi09yig0jADGm6tvvHLTuPF2g15XMpICJ4HwiDX_ot3l_IwEoeJkrr4OjgYn1aUiY7YZL96cf9m-SzTa-pO=w480-h960-rw" alt="Anotador de Generala">
-            <div class="app-title">Anot. Generala</div>
-            <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorgenerala" target="_blank">Download</a>
-        </div>
-        <div class="app">
-            <img src="https://play-lh.googleusercontent.com/znHQhqlSXh5PcP6R8iGJVocQ65Vio1hKNy_S4Rh7s-h-PbeDAsAtEEY_AwHCABtpDTJ42M_eJDa2vX6AI9cnvuA=w480-h960-rw" alt="Anotador de Carioca">
-            <div class="app-title">Anot. Carioca</div>
-            <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcarioca" target="_blank">Download</a>
-        </div>
-        <div class="app">
-            <img src="https://play-lh.googleusercontent.com/qblkZBOkB0Ad_EEKl61SPkdTFD6uIegnqp2xh2WFhg1Jgbc5WQD46bmve_KISz0k55nJ9Z2C16KN6yq2_luq1g=w480-h960-rw" alt="Anotador de Escoba del 15">
-            <div class="app-title">Anot. Escoba 15</div>
-            <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorescoba" target="_blank">Download</a>
+
+        <div class="row">
+            <div class="app">
+                <img src="https://play-lh.googleusercontent.com/qblkZBOkB0Ad_EEKl61SPkdTFD6uIegnqp2xh2WFhg1Jgbc5WQD46bmve_KISz0k55nJ9Z2C16KN6yq2_luq1g=w480-h960-rw" alt="Anotador de Escoba del 15">
+                <div class="app-title">Anot. Escoba 15</div>
+                <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorescoba" target="_blank">Download</a>
+            </div>
+            <div class="app">
+                <img src="https://play-lh.googleusercontent.com/MSexi99Po4CHtlSd6yfMatVyH3GyKgwefUFsUzjtm-arJXPxag-GNqX2qFQwVYqJoc1D2tVSUizTkyHpM3I_sg=w240-h480-rw" alt="Chinchón & Rummy">
+                <div class="app-title">Chinchón & Rummy</div>
+                <a href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorrummychinchon" target="_blank">Download</a>
+            </div>
+            <div class="app">
+                <img src="https://play-lh.googleusercontent.com/VL6w01z34s1BubV_HuGy4XZjU5ajf3OirQ87dto5klZ8Hzvitc8l1EzL8MnXC9YcuzIn=w240-h480-rw" alt="Watch It">
+                <div class="app-title">Watch It</div>
+                <a href="https://play.google.com/store/apps/details?id=screwitapps.watchit" target="_blank">Download</a>
+            </div>
         </div>
     </div>
+
     <footer>
         &copy; 2016 Screw it Apps. All rights reserved.
     </footer>
