@@ -16,6 +16,8 @@
             --border: #d2d2d7;
             --radius: 12px;
             --max-width: 720px;
+            --store-badge-height: 56px;
+            --store-badge-width: calc(var(--store-badge-height) * 3.375);
         }
 
         * { box-sizing: border-box; }
@@ -170,8 +172,8 @@
 
         /* Matched pair (SVGRepo): same 800×800 canvas and artwork bounds. */
         .store-badge {
-            width: 135px;
-            height: 40px;
+            width: var(--store-badge-width);
+            height: var(--store-badge-height);
         }
 
         .store-badge img {
