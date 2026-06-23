@@ -178,10 +178,21 @@
             box-shadow: none;
         }
 
-        .store-badge--apple img,
+        .store-badge--apple img {
+            object-fit: contain;
+            object-position: left center;
+        }
+
+        .store-badge--google {
+            width: 132px;
+            overflow: visible;
+        }
+
         .store-badge--google img {
             object-fit: contain;
             object-position: left center;
+            transform: scale(1.22);
+            transform-origin: left center;
         }
 
         /* —— Support & FAQ (unchanged content, refined typography) —— */
