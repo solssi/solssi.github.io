@@ -154,7 +154,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             margin-top: 6px;
             padding-left: 72px;
         }
@@ -162,37 +162,26 @@
         .store-badge {
             display: block;
             flex: 0 0 auto;
-            height: 40px;
             line-height: 0;
             transition: opacity 0.15s;
         }
 
         .store-badge:hover { opacity: 0.85; }
 
-        /* Shared visual footprint: 120×40 (App Store badge proportions). */
+        /* Matched pair (SVGRepo): same 800×800 canvas and artwork bounds. */
+        .store-badge {
+            width: 135px;
+            height: 40px;
+        }
+
         .store-badge img {
             display: block;
-            height: 40px;
-            width: 120px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: left center;
             border-radius: 0;
             box-shadow: none;
-        }
-
-        .store-badge--apple img {
-            object-fit: contain;
-            object-position: left center;
-        }
-
-        .store-badge--google {
-            width: 126px;
-            overflow: visible;
-        }
-
-        .store-badge--google img {
-            object-fit: contain;
-            object-position: left center;
-            transform: scale(1.13);
-            transform-origin: left center;
         }
 
         /* —— Support & FAQ (unchanged content, refined typography) —— */
@@ -281,15 +270,15 @@
 
             <ul class="app-list">
                 <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/57z8vLjD24FvUSk_ts3e8KBG75kyu5DEdoGY4w4hhT9OT4Puzga1uaUFOFLJJez4qkGh=w240-h480-rw" alt="" width="56" height="56">
+                    <img src="https://play-lh.googleusercontent.com/zqK3_hp-folBDicvXbILK0qr5qhndCoTugAfWCIy0Ti5B-JIamRZsuVoh_eNxK7Mj67BZDkQdHnhE_aTFzTqjg=w240-h480-rw" alt="" width="56" height="56">
                     <h3>Truco</h3>
                     <p class="desc">Score tracker for Argentine Truco</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordetruco" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordetruco" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
-                        <a class="store-badge store-badge--apple" href="https://apps.apple.com/app/id6761754065" target="_blank" rel="noopener noreferrer">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+                        <a class="store-badge" href="https://apps.apple.com/app/id6761754065" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
                         </a>
                     </div>
                 </li>
@@ -299,11 +288,11 @@
                     <h3>Chinchón</h3>
                     <p class="desc">Score tracker for Chinchón</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorchinchon" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorchinchon" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
-                        <a class="store-badge store-badge--apple" href="https://apps.apple.com/app/id6778341655" target="_blank" rel="noopener noreferrer">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+                        <a class="store-badge" href="https://apps.apple.com/app/id6778341655" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
                         </a>
                     </div>
                 </li>
@@ -313,25 +302,25 @@
                     <h3>Carioca</h3>
                     <p class="desc">Score tracker for Carioca rummy</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcarioca" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcarioca" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
-                        <a class="store-badge store-badge--apple" href="https://apps.apple.com/app/id6765902886" target="_blank" rel="noopener noreferrer">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+                        <a class="store-badge" href="https://apps.apple.com/app/id6765902886" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
                         </a>
                     </div>
                 </li>
 
                 <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/MSexi99Po4CHtlSd6yfMatVyH3GyKgwefUFsUzjtm-arJXPxag-GNqX2qFQwVYqJoc1D2tVSUizTkyHpM3I_sg=w240-h480-rw" alt="" width="56" height="56">
+                    <img src="https://play-lh.googleusercontent.com/K6slzMKucaEVB6S3f2K14oC4sBXoeVY63Ept2l7KVK5sUpvaZU2gVdmgSXqGuy367yQUeWD6aiaeY-pk3up0bw=w240-h480-rw" alt="" width="56" height="56">
                     <h3>Rummy</h3>
                     <p class="desc">Round-by-round rummy score tracker</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorrummychinchon" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorrummychinchon" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
-                        <a class="store-badge store-badge--apple" href="https://apps.apple.com/app/id6780179780" target="_blank" rel="noopener noreferrer">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+                        <a class="store-badge" href="https://apps.apple.com/app/id6780179780" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
                         </a>
                     </div>
                 </li>
@@ -341,11 +330,11 @@
                     <h3>Escoba del 15</h3>
                     <p class="desc">Score tracker for Escoba</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorescoba" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorescoba" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
-                        <a class="store-badge store-badge--apple" href="https://apps.apple.com/app/id6781999933" target="_blank" rel="noopener noreferrer">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+                        <a class="store-badge" href="https://apps.apple.com/app/id6781999933" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
                         </a>
                     </div>
                 </li>
@@ -355,11 +344,11 @@
                     <h3>Generala &amp; Yatzy</h3>
                     <p class="desc">Yahtzee, Generala, and Nordic Yatzy score sheets</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorgenerala" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorgenerala" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
-                        <a class="store-badge store-badge--apple" href="https://apps.apple.com/app/id6780535689" target="_blank" rel="noopener noreferrer">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+                        <a class="store-badge" href="https://apps.apple.com/app/id6780535689" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
                         </a>
                     </div>
                 </li>
@@ -369,11 +358,11 @@
                     <h3>Canasta</h3>
                     <p class="desc">Score tracker for Canasta</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcanasta" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcanasta" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
-                        <a class="store-badge store-badge--apple" href="https://apps.apple.com/app/id6782016917" target="_blank" rel="noopener noreferrer">
-                            <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store">
+                        <a class="store-badge" href="https://apps.apple.com/app/id6782016917" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
                         </a>
                     </div>
                 </li>
@@ -383,8 +372,8 @@
                     <h3>7 Wonders Score</h3>
                     <p class="desc">Score companion for the 7 Wonders board game</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.sevenwonders" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.sevenwonders" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
                     </div>
                 </li>
@@ -394,19 +383,19 @@
                     <h3>Truco Mineiro Paulista</h3>
                     <p class="desc">Score tracker for Truco Mineiro and Truco Paulista</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=com.screwitapps.trucobrasil" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.trucobrasil" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
                     </div>
                 </li>
 
                 <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/VL6w01z34s1BubV_HuGy4XZjU5ajf3OirQ87dto5klZ8Hzvitc8l1EzL8MnXC9YcuzIn=w240-h480-rw" alt="" width="56" height="56">
+                    <img src="https://play-lh.googleusercontent.com/96ERaxnonPFYevIsaoOBqT73Vu9QWUxZwABXpZwSq5dAuzoAzarP7g2JcSv5yumznqjT6ToqL32vvoTjbDl_4xQ=w240-h480-rw" alt="" width="56" height="56">
                     <h3>Watch It</h3>
                     <p class="desc">Track TV shows and movies you watch</p>
                     <div class="app-stores">
-                        <a class="store-badge store-badge--google" href="https://play.google.com/store/apps/details?id=screwitapps.watchit" target="_blank" rel="noopener noreferrer">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=screwitapps.watchit" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
                         </a>
                     </div>
                 </li>
