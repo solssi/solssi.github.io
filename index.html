@@ -163,6 +163,8 @@
         .store-badge {
             display: block;
             flex: 0 0 auto;
+            width: calc(var(--store-badge-height) * 800 / 238);
+            height: var(--store-badge-height);
             line-height: 0;
             transition: opacity 0.15s;
         }
@@ -171,8 +173,11 @@
 
         .store-badge img {
             display: block;
-            height: var(--store-badge-height);
-            width: auto;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            object-fit: contain;
+            object-position: left center;
             border-radius: 0;
             box-shadow: none;
         }
@@ -230,8 +235,15 @@
         footer a:hover { color: var(--brand-start); }
 
         @media (max-width: 520px) {
+            :root {
+                --store-badge-height: 48px;
+            }
+
             .app-stores {
                 padding-left: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
             }
 
             .app-row {
