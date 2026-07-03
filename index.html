@@ -235,12 +235,24 @@
         footer a:hover { color: var(--brand-start); }
 
         @media (max-width: 520px) {
+            .main {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            #apps.panel {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
             .app-stores {
-                padding-left: 64px;
+                padding-left: 0;
+                flex-wrap: nowrap;
             }
 
             .app-row {
                 grid-template-columns: 48px 1fr;
+                gap: 4px 12px;
             }
 
             .app-row img {
