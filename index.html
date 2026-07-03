@@ -162,8 +162,11 @@
 
         .store-badge {
             display: block;
-            flex: 0 0 auto;
-            flex-shrink: 0;
+            /* Explicit width = height × (800/238) so the browser never has to
+               guess the aspect ratio and flex can't squish it. */
+            flex: 0 0 calc(var(--store-badge-height) * 800 / 238);
+            width: calc(var(--store-badge-height) * 800 / 238);
+            height: var(--store-badge-height);
             line-height: 0;
             transition: opacity 0.15s;
         }
@@ -172,9 +175,8 @@
 
         .store-badge img {
             display: block;
-            height: var(--store-badge-height);
-            width: auto;
-            max-width: none;
+            width: 100%;
+            height: 100%;
             border-radius: 0;
             box-shadow: none;
         }
