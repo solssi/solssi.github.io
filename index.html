@@ -16,7 +16,7 @@
             --border: #d2d2d7;
             --radius: 12px;
             --max-width: 720px;
-            --store-badge-height: 44px;
+            --store-badge-height: 48px;
         }
 
         * { box-sizing: border-box; }
@@ -235,15 +235,35 @@
         footer a:hover { color: var(--brand-start); }
 
         @media (max-width: 520px) {
-            :root {
-                --store-badge-height: 48px;
+            .main {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .panel {
+                padding-left: 12px;
+                padding-right: 12px;
             }
 
             .app-stores {
                 padding-left: 0;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
+                flex-wrap: nowrap;
+                gap: 8px;
+            }
+
+            /* Two badges: share the row at max size without squishing. */
+            .store-badge {
+                flex: 0 0 calc(50% - 4px);
+                width: calc(50% - 4px);
+                height: auto;
+                aspect-ratio: 800 / 238;
+            }
+
+            .store-badge:only-child {
+                flex: 0 0 auto;
+                width: calc(var(--store-badge-height) * 800 / 238);
+                height: var(--store-badge-height);
+                aspect-ratio: auto;
             }
 
             .app-row {
