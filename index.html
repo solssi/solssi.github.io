@@ -5,165 +5,508 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Screw it Apps — scorekeepers for card and dice games, Sudoku and Square Crash, and handy tools. Support, contact, and downloads for Android and iOS.">
     <title>Screw it Apps — Support &amp; Downloads</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-start: #6a11cb;
-            --brand-end: #2575fc;
-            --text: #1d1d1f;
-            --text-secondary: #6e6e73;
-            --surface: #ffffff;
-            --surface-muted: #f5f5f7;
-            --border: #d2d2d7;
-            --radius: 12px;
-            --max-width: 720px;
-            --store-badge-height: 44px;
+            --ink: #141816;
+            --muted: #5c6560;
+            --paper: #eef1ed;
+            --surface: #f7f9f6;
+            --accent: #1a6b4a;
+            --accent-deep: #0f4531;
+            --accent-soft: #cfe4d8;
+            --line: #d4dbd5;
+            --store-badge-height: 36px;
+            --max: 1080px;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --font-display: "Outfit", sans-serif;
+            --font-body: "Figtree", sans-serif;
         }
 
         * { box-sizing: border-box; }
 
+        html { scroll-behavior: smooth; }
+
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            color: var(--text);
-            background: var(--surface-muted);
-            line-height: 1.5;
-        }
-
-        a { color: var(--brand-start); }
-
-        /* —— Hero —— */
-        .hero {
-            background: linear-gradient(135deg, var(--brand-start), var(--brand-end));
-            color: #fff;
-            padding: 48px 20px 56px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            margin: 0 0 10px;
-            font-size: clamp(1.75rem, 5vw, 2.5rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .hero .tagline {
-            margin: 0 auto;
-            max-width: 32em;
-            font-size: 1.05rem;
-            opacity: 0.92;
+            font-family: var(--font-body);
+            color: var(--ink);
+            background: var(--paper);
             line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .hero-nav {
+        a { color: var(--accent); }
+
+        img { display: block; max-width: 100%; }
+
+        /* —— Site chrome —— */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 24px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 24px;
+            background: color-mix(in srgb, var(--surface) 86%, transparent);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.25s var(--ease);
         }
 
-        .hero-nav a {
-            color: #fff;
+        .site-nav.is-scrolled {
+            border-bottom-color: var(--line);
+        }
+
+        .site-nav .mark {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.08rem;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            color: var(--ink);
             text-decoration: none;
-            font-size: 0.9rem;
-            padding: 8px 16px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.14);
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            transition: background 0.15s;
         }
 
-        .hero-nav a:hover { background: rgba(255, 255, 255, 0.26); }
-
-        /* —— Main layout —— */
-        .main {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 20px 48px;
-        }
-
-        .panel {
-            background: var(--surface);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            padding: 28px 24px;
-            margin-top: 24px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-        }
-
-        .panel.panel-overlap {
-            margin-top: -28px;
-        }
-
-        .panel h2 {
-            margin: 0 0 6px;
-            font-size: 1.35rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-
-        .panel .lead {
-            margin: 0 0 20px;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* —— App catalog (list rows) —— */
-        .app-list {
+        .site-nav .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 18px;
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        .app-row {
+        .site-nav .links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .site-nav .links a:hover { color: var(--ink); }
+
+        /* —— Hero —— */
+        .hero {
+            position: relative;
+            overflow-x: clip;
+            overflow-y: visible;
+            min-height: min(92vh, 820px);
             display: grid;
-            grid-template-columns: 56px 1fr;
-            grid-template-rows: auto auto;
-            gap: 4px 16px;
-            padding: 18px 0;
-            border-bottom: 1px solid var(--border);
-            align-items: start;
+            align-items: end;
+            padding: 48px 24px 56px;
+            background:
+                radial-gradient(ellipse 80% 60% at 12% 18%, #c5ddd0 0%, transparent 55%),
+                radial-gradient(ellipse 70% 50% at 88% 8%, #d9e4c8 0%, transparent 50%),
+                radial-gradient(ellipse 50% 40% at 70% 90%, #b9d4c6 0%, transparent 55%),
+                linear-gradient(165deg, #f4f7f3 0%, #e6ebe4 48%, #dfe8e2 100%);
         }
 
-        .app-row:last-child { border-bottom: none; padding-bottom: 0; }
-        .app-row:first-child { padding-top: 0; }
-
-        .app-row > img {
-            grid-row: 1 / span 2;
-            width: 56px;
-            height: 56px;
-            border-radius: 13px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 55vmax;
+            height: 55vmax;
+            left: -12%;
+            top: -18%;
+            border-radius: 50%;
+            background: radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 68%);
+            pointer-events: none;
+            animation: drift 18s ease-in-out infinite alternate;
+            z-index: 0;
         }
 
-        .app-row h3 {
-            margin: 0;
-            font-size: 1.05rem;
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            width: min(100%, var(--max));
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 40px 48px;
+            align-items: end;
+        }
+
+        .hero-copy {
+            max-width: 34rem;
+            animation: rise 0.9s var(--ease) both;
+        }
+
+        .brand {
+            margin: 0 0 16px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(2.85rem, 8vw, 5.25rem);
+            line-height: 1;
+            letter-spacing: -0.045em;
+            color: var(--ink);
+        }
+
+        .hero h2 {
+            margin: 0 0 12px;
+            font-family: var(--font-display);
             font-weight: 600;
-            align-self: end;
+            font-size: clamp(1.25rem, 2.8vw, 1.65rem);
+            letter-spacing: -0.025em;
+            line-height: 1.3;
+            color: var(--ink);
         }
 
-        .app-row .desc {
+        .hero .lede {
+            margin: 0 0 28px;
+            font-size: 1.08rem;
+            color: var(--muted);
+            max-width: 28em;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s var(--ease), background 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .btn:active { transform: translateY(1px); }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            border: 1px solid var(--accent);
+        }
+
+        .btn-primary::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.22) 48%, transparent 62%);
+            transform: translateX(-120%);
+            transition: transform 0.55s var(--ease);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-deep);
+            border-color: var(--accent-deep);
+        }
+
+        .btn-primary:hover::after { transform: translateX(120%); }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--ink);
+            background: color-mix(in srgb, #fff 55%, transparent);
+        }
+
+        /* Hero product mosaic */
+        .hero-visual {
+            position: relative;
+            min-height: 320px;
+            overflow: hidden;
+            animation: rise 1s var(--ease) 0.12s both;
+            perspective: 800px;
+        }
+
+        .icon-mosaic {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            transform-style: preserve-3d;
+            transition: transform 0.45s var(--ease);
+            will-change: transform;
+        }
+
+        .icon-mosaic img {
+            position: absolute;
+            width: clamp(64px, 12vw, 88px);
+            height: clamp(64px, 12vw, 88px);
+            border-radius: 20px;
+            object-fit: cover;
+            background: #fff;
+            border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+            opacity: 0;
+            transform: translateY(22px) scale(0.86);
+            animation:
+                icon-in 0.7s var(--ease) forwards,
+                float 7s ease-in-out 0.7s infinite;
+            transition: filter 0.25s var(--ease);
+        }
+
+        .icon-mosaic img:hover {
+            filter: brightness(1.04);
+            z-index: 2;
+        }
+
+        .icon-mosaic img:nth-child(1) { left: 8%; top: 12%; animation-delay: 0.15s, 0.85s; }
+        .icon-mosaic img:nth-child(2) {
+            left: 38%; top: 0%;
+            width: clamp(72px, 14vw, 104px);
+            height: clamp(72px, 14vw, 104px);
+            border-radius: 24px;
+            animation-delay: 0.28s, 0.98s;
+        }
+        .icon-mosaic img:nth-child(3) { right: 10%; top: 18%; animation-delay: 0.22s, 0.92s; }
+        .icon-mosaic img:nth-child(4) { left: 18%; top: 48%; animation-delay: 0.36s, 1.06s; }
+        .icon-mosaic img:nth-child(5) {
+            left: 48%; top: 42%;
+            width: clamp(68px, 13vw, 96px);
+            height: clamp(68px, 13vw, 96px);
+            animation-delay: 0.42s, 1.12s;
+        }
+        .icon-mosaic img:nth-child(6) { right: 14%; top: 52%; animation-delay: 0.48s, 1.18s; }
+        .icon-mosaic img:nth-child(7) { left: 32%; bottom: 4%; animation-delay: 0.54s, 1.24s; }
+
+        .mosaic-glow {
+            position: absolute;
+            inset: 18% 12% 10% 12%;
+            background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%);
+            pointer-events: none;
+            animation: pulse-glow 6s ease-in-out infinite;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes icon-in {
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes drift {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(18%, 12%) scale(1.12); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.75; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.06); }
+        }
+
+        @keyframes draw-line {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-copy,
+            .hero-visual,
+            .hero::after,
+            .mosaic-glow,
+            .icon-mosaic img,
+            .app-tile,
+            .reveal,
+            .section-head::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            .icon-mosaic img {
+                opacity: 1;
+                transform: none;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* —— Sections —— */
+        .wrap {
+            width: min(100%, var(--max));
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 72px 0 8px;
+        }
+
+        .section-head {
+            margin-bottom: 28px;
+            max-width: 36rem;
+            position: relative;
+            padding-bottom: 14px;
+        }
+
+        .section-head::after {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 3px;
+            margin-top: 14px;
+            border-radius: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left center;
+        }
+
+        .section-head.is-inview::after {
+            animation: draw-line 0.55s var(--ease) forwards;
+        }
+
+        .section-head h2 {
+            margin: 0 0 8px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: clamp(1.45rem, 2.8vw, 1.8rem);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+        }
+
+        .section-head p {
             margin: 0;
-            font-size: 0.88rem;
-            color: var(--text-secondary);
-            grid-column: 2;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .pitch {
+            padding: 56px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            background: color-mix(in srgb, var(--surface) 70%, transparent);
+        }
+
+        .pitch p {
+            margin: 0;
+            max-width: 34rem;
+            font-family: var(--font-display);
+            font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            line-height: 1.4;
+            color: var(--ink);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+        }
+
+        .reveal.is-inview {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* —— App catalog (gallery grid) —— */
+        .app-grid {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .app-tile {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 20px 18px 18px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition:
+                border-color 0.2s var(--ease),
+                background 0.2s,
+                transform 0.35s var(--ease),
+                opacity 0.55s var(--ease);
+        }
+
+        .app-tile.is-inview {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .app-tile:hover {
+            border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+            background: #fff;
+            transform: translateY(-4px);
+        }
+
+        .app-tile > img {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            object-fit: cover;
+            background: #fff;
+            border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
+            transition: transform 0.35s var(--ease);
+        }
+
+        .app-tile:hover > img {
+            transform: scale(1.06) rotate(-2deg);
+        }
+
+        .app-tile h3 {
+            margin: 0 0 4px;
+            font-family: var(--font-display);
+            font-size: 1.08rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .app-tile .desc {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.4;
+            flex: 1;
         }
 
         .app-stores {
-            grid-column: 1 / -1;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 12px;
-            margin-top: 8px;
-            padding-left: 72px;
+            gap: 8px;
+            margin-top: 4px;
         }
 
         .store-badge {
             display: block;
-            /* Explicit width = height × (800/238) so the browser never has to
-               guess the aspect ratio and flex can't squish it. */
             flex: 0 0 calc(var(--store-badge-height) * 800 / 238);
             width: calc(var(--store-badge-height) * 800 / 238);
             height: var(--store-badge-height);
@@ -171,394 +514,567 @@
             transition: opacity 0.15s;
         }
 
-        .store-badge:hover { opacity: 0.85; }
+        .store-badge:hover { opacity: 0.8; }
 
         .store-badge img {
-            display: block;
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 0;
-            box-shadow: none;
         }
 
-        /* —— Support & FAQ (unchanged content, refined typography) —— */
+        /* —— Support / FAQ —— */
+        .support-block,
+        .faq-block {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 28px 26px;
+        }
+
         .contact-email {
             display: inline-block;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--brand-start);
+            margin: 8px 0 4px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            color: var(--accent);
             text-decoration: none;
         }
 
-        .contact-email:hover { text-decoration: underline; }
+        .contact-email:hover { text-decoration: underline; text-underline-offset: 3px; }
 
         .support-list {
             margin: 12px 0 0;
-            padding-left: 1.25rem;
-            color: var(--text);
+            padding-left: 1.2rem;
         }
 
         .support-list li { margin-bottom: 6px; }
 
         .faq-item {
-            padding: 14px 0;
-            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--line);
         }
 
-        .faq-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
+        .faq-item:first-child { padding-top: 0; }
+        .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
 
         .faq-item strong {
             display: block;
             margin-bottom: 4px;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
         }
 
         .faq-item p {
             margin: 0;
-            font-size: 0.92rem;
-            color: var(--text-secondary);
+            font-size: 0.94rem;
+            color: var(--muted);
         }
 
         /* —— Footer —— */
         footer {
+            margin-top: 64px;
+            padding: 36px 24px 48px;
             text-align: center;
-            padding: 32px 20px 40px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            font-size: 0.88rem;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+            background: var(--surface);
         }
 
-        footer a { color: var(--text-secondary); }
-        footer a:hover { color: var(--brand-start); }
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+        }
 
-        @media (max-width: 520px) {
-            :root {
-                --store-badge-height: 38px;
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 900px) {
+            .app-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 860px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                align-items: start;
             }
 
-            .app-stores {
-                padding-left: 0;
-                flex-wrap: nowrap;
+            .hero {
+                min-height: auto;
+                padding-top: 36px;
+                padding-bottom: 40px;
             }
 
-            .app-row {
-                grid-template-columns: 48px 1fr;
+            .hero-visual {
+                order: -1;
+                min-height: 260px;
             }
 
-            .app-row > img {
-                width: 48px;
-                height: 48px;
+            .icon-mosaic { min-height: 260px; }
+
+            .icon-mosaic img {
+                width: 58px;
+                height: 58px;
+                border-radius: 16px;
             }
+
+            .icon-mosaic img:nth-child(2),
+            .icon-mosaic img:nth-child(5) {
+                width: 72px;
+                height: 72px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            :root { --store-badge-height: 34px; }
+
+            .site-nav { padding: 12px 16px; }
+            .wrap { padding: 0 16px; }
+            .section { padding-top: 56px; }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .app-tile {
+                display: grid;
+                grid-template-columns: 56px 1fr;
+                grid-template-rows: auto auto;
+                gap: 4px 14px;
+                align-items: start;
+                padding: 16px;
+            }
+
+            .app-tile > img {
+                grid-row: 1 / span 2;
+                width: 56px;
+                height: 56px;
+                border-radius: 14px;
+            }
+
+            .app-tile .desc { grid-column: 2; }
+            .app-stores { grid-column: 1 / -1; margin-top: 8px; }
+
+            .support-block,
+            .faq-block { padding: 22px 18px; }
         }
     </style>
 </head>
 <body>
+    <nav class="site-nav" aria-label="Primary">
+        <a class="mark" href="#">Screw it</a>
+        <ul class="links">
+            <li><a href="#apps">Apps</a></li>
+            <li><a href="#support">Support</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+    </nav>
+
     <header class="hero">
-        <h1>Screw it Apps</h1>
-        <p class="tagline">Scorekeepers for card and dice games, casual games, and practical tools — simple, reliable, and free to use.</p>
-        <nav class="hero-nav" aria-label="Page sections">
-            <a href="#scorekeepers">Scorekeepers</a>
-            <a href="#games">Games</a>
-            <a href="#tools">Tools</a>
-            <a href="#support">Support</a>
-            <a href="#faq">FAQ</a>
-        </nav>
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <p class="brand">Screw it</p>
+                <h2>Apps for the table — and a few more.</h2>
+                <p class="lede">Scorekeepers for card and dice games, calm puzzles, quick play, and practical tools. Simple, reliable, free to use.</p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="#apps">Browse apps</a>
+                    <a class="btn btn-ghost" href="#support">Get support</a>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="mosaic-glow"></div>
+                <div class="icon-mosaic">
+                    <img src="https://play-lh.googleusercontent.com/zqK3_hp-folBDicvXbILK0qr5qhndCoTugAfWCIy0Ti5B-JIamRZsuVoh_eNxK7Mj67BZDkQdHnhE_aTFzTqjg=w240-h480-rw" alt="" width="88" height="88">
+                    <img src="https://play-lh.googleusercontent.com/qblkZBOkB0Ad_EEKl61SPkdTFD6uIegnqp2xh2WFhg1Jgbc5WQD46bmve_KISz0k55nJ9Z2C16KN6yq2_luq1g=w240-h480-rw" alt="" width="104" height="104">
+                    <img src="https://play-lh.googleusercontent.com/ap2CMItEzQybhG-AN3HRRfCobs3iSil55srkeYNb5qtYqDHs9RhmaM7GzL09gtWHu5OHc3JMrWY_jQewnRQtNA=w240-h480-rw" alt="" width="88" height="88">
+                    <img src="https://play-lh.googleusercontent.com/EhWKOHNgV6-el__5txHoRxlY91fW2APldGkDUnFXCwSJmcZliJlZLrSvkQy2E1yk2_-1KZXkjgDnG3qQYKikeQ=w240-h480-rw" alt="" width="88" height="88">
+                    <img src="https://play-lh.googleusercontent.com/znHQhqlSXh5PcP6R8iGJVocQ65Vio1hKNy_S4Rh7s-h-PbeDAsAtEEY_AwHCABtpDTJ42M_eJDa2vX6AI9cnvuA=w240-h480-rw" alt="" width="96" height="96">
+                    <img src="https://play-lh.googleusercontent.com/JFi09yig0jADGm6tvvHLTuPF2g15XMpICJ4HwiDX_ot3l_IwEoeJkrr4OjgYn1aUiY7YZL96cf9m-SzTa-pO=w240-h480-rw" alt="" width="88" height="88">
+                    <img src="https://play-lh.googleusercontent.com/fsAe4533PdsYR85q1dTQ6YOoMz-vhUghgWZTxwR3YGaM-Ds2ASf_BCktvwjbTKzYICx_kIJEL5LFg22k0LU2=w240-h480-rw" alt="" width="88" height="88">
+                </div>
+            </div>
+        </div>
     </header>
 
-    <div class="main">
-        <section id="scorekeepers" class="panel panel-overlap" aria-labelledby="scorekeepers-heading">
-            <h2 id="scorekeepers-heading">Scorekeepers</h2>
-            <p class="lead">Track scores for card, dice, and board games. Download on Google Play or the App Store.</p>
-
-            <ul class="app-list">
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/zqK3_hp-folBDicvXbILK0qr5qhndCoTugAfWCIy0Ti5B-JIamRZsuVoh_eNxK7Mj67BZDkQdHnhE_aTFzTqjg=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Truco</h3>
-                    <p class="desc">Score tracker for Argentine Truco</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordetruco" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6761754065" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/EhWKOHNgV6-el__5txHoRxlY91fW2APldGkDUnFXCwSJmcZliJlZLrSvkQy2E1yk2_-1KZXkjgDnG3qQYKikeQ=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Chinchón</h3>
-                    <p class="desc">Score tracker for Chinchón</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorchinchon" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6778341655" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/znHQhqlSXh5PcP6R8iGJVocQ65Vio1hKNy_S4Rh7s-h-PbeDAsAtEEY_AwHCABtpDTJ42M_eJDa2vX6AI9cnvuA=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Carioca</h3>
-                    <p class="desc">Score tracker for Carioca rummy</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcarioca" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6765902886" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/K6slzMKucaEVB6S3f2K14oC4sBXoeVY63Ept2l7KVK5sUpvaZU2gVdmgSXqGuy367yQUeWD6aiaeY-pk3up0bw=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Rummy</h3>
-                    <p class="desc">Round-by-round rummy score tracker</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorrummychinchon" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6780179780" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/qblkZBOkB0Ad_EEKl61SPkdTFD6uIegnqp2xh2WFhg1Jgbc5WQD46bmve_KISz0k55nJ9Z2C16KN6yq2_luq1g=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Escoba del 15</h3>
-                    <p class="desc">Score tracker for Escoba</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorescoba" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6781999933" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/ErBstWtgsJrOiyPkKp3aVQxODkNKKAsgIgr_k-juVyJwt4XVtPjcSACn2xeuC-hpMJ31QhiGLpuXXoeMtoX2-Q=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Oh Hell / Pocha / Bazas</h3>
-                    <p class="desc">Score tracker for Oh Hell and trick-bidding card games</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordebazas" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6789110613" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/o_NYB_sm7vd7pVws4IJW8ZThGpAzXPJn0pJkhT7CUvJIPA5lzh8ikc8ssT7RyHTd86RhcmdOsq343B_wSyarbMs=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Mus</h3>
-                    <p class="desc">Score tracker for Mus — stones, cows, and envites</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadormus" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6792007881" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/JFi09yig0jADGm6tvvHLTuPF2g15XMpICJ4HwiDX_ot3l_IwEoeJkrr4OjgYn1aUiY7YZL96cf9m-SzTa-pO=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Generala &amp; Yatzy</h3>
-                    <p class="desc">Yahtzee, Generala, and Nordic Yatzy score sheets</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorgenerala" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6780535689" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/COne36IAMfcpb58tsqGEe5ZRCPhYlpGtUPh7DPGQpKPNqUx_CGPZFedUhVND4f8PkXqBk7tPTmET4B5vHCNVKA=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Canasta</h3>
-                    <p class="desc">Score tracker for Canasta</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcanasta" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6782016917" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/U039s-YpLbBW1tGI984zLc6_NZMDMQ2RnwTq07xzuDIMGb5VqpW_yvqOUY71LYLPtD0teJQkRRO-yA3vo30G=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>7 Wonders Score</h3>
-                    <p class="desc">Score companion for the 7 Wonders board game</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.sevenwonders" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/zqS7LNDZLES8pp30QgMT_kwFNEuIKCCw0w6U3F7GhBXvrxAGpueZduGC4_O6cYC4e1Xe_IcSXCUkDkBAcVMA=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Truco Mineiro Paulista</h3>
-                    <p class="desc">Score tracker for Truco Mineiro and Truco Paulista</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.trucobrasil" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section id="games" class="panel" aria-labelledby="games-heading">
-            <h2 id="games-heading">Games</h2>
-            <p class="lead">Quick play — not scorekeepers.</p>
-
-            <ul class="app-list">
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/ap2CMItEzQybhG-AN3HRRfCobs3iSil55srkeYNb5qtYqDHs9RhmaM7GzL09gtWHu5OHc3JMrWY_jQewnRQtNA=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Sudoku</h3>
-                    <p class="desc">Classic 9×9 offline — hints, notes, and calm themes</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.sudoku" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6807477667" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/ILWWbOB7zHODD1zsafwcMonJZC3qHjhU_14KFkFkdelCjOq9xzAkFh6vfjhydXdcLtQP1eURzlT839yGCK4k4T8=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Square Crash</h3>
-                    <p class="desc">Neon timing game — crash two squares before you miss</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.squarecrash" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6800270764" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section id="tools" class="panel" aria-labelledby="tools-heading">
-            <h2 id="tools-heading">Tools</h2>
-            <p class="lead">Utilities beyond scorekeeping.</p>
-
-            <ul class="app-list">
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/5pc1B9iv5JSR7DrPzkDPEUWoVmVeBbfg9ckPYkY50z6vKp0IGdaDoiqRhZbLgi_w2fA4vSkfnMncaHrh_fy_zSc=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>DIY Material Calculator</h3>
-                    <p class="desc">Paint, tile, cement &amp; more — shopping list in real packs</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.materialcalc" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/cq_fNUPrUJiukjWFg14x99MBR7S9vsObeIA6LDoS1nSpJj7PBXg0p94l7CJ4fhId-Hqs7ILU3wLtbGMvmYvJxk4=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Calculadoras AR</h3>
-                    <p class="desc">Argentine salary, Monotributo, and IVA calculators</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.calculadorasar" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                    </div>
-                </li>
-
-                <li class="app-row">
-                    <img src="https://play-lh.googleusercontent.com/fsAe4533PdsYR85q1dTQ6YOoMz-vhUghgWZTxwR3YGaM-Ds2ASf_BCktvwjbTKzYICx_kIJEL5LFg22k0LU2=w240-h480-rw" alt="" width="56" height="56">
-                    <h3>Madrid ZBE</h3>
-                    <p class="desc">Guidance map for Madrid ZBEDEP Distrito Centro</p>
-                    <div class="app-stores">
-                        <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.madridzbe" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/google-play-badge.png" alt="Get it on Google Play">
-                        </a>
-                        <a class="store-badge" href="https://apps.apple.com/app/id6805931938" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/app-store-badge.png" alt="Download on the App Store">
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section id="support" class="panel" aria-labelledby="support-heading">
-            <h2 id="support-heading">Support</h2>
-            <p>
-                Need help with one of our apps, found a bug, or want to send feedback?
-                Contact us by email — we are happy to help.
-            </p>
-            <p>
-                <a class="contact-email" href="mailto:support@screwitapps.com?subject=App%20Support%20Request">support@screwitapps.com</a>
-            </p>
-            <p><strong>When you write to us, please include:</strong></p>
-            <ul class="support-list">
-                <li>The app name (for example, <em>Yahtzee Score Tracker</em>, <em>Truco</em>, or <em>Carioca</em>)</li>
-                <li>Your device model and OS version (iOS or Android)</li>
-                <li>The app version (shown in Settings or About inside the app)</li>
-                <li>A short description of the issue and steps to reproduce it, if applicable</li>
-            </ul>
-            <p>We usually reply within 2–3 business days.</p>
-        </section>
-
-        <section id="faq" class="panel" aria-labelledby="faq-heading">
-            <h2 id="faq-heading">Frequently asked questions</h2>
-
-            <div class="faq-item">
-                <strong>Are your apps free?</strong>
-                <p>Our apps are free to download and use. Some features may be supported by optional ads.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>How do I save a game?</strong>
-                <p>In scorekeeper apps, use the save option during play to keep your current scores. You can return later and continue where you left off.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>How do I view past games?</strong>
-                <p>In scorekeeper apps, open <em>History</em> from the home screen to review completed matches and scores.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Where is my data stored?</strong>
-                <p>App data is stored locally on your device. We do not require an account to use our apps.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>How do I report a bug?</strong>
-                <p>Email <a href="mailto:support@screwitapps.com?subject=Bug%20Report">support@screwitapps.com</a> with the app name, device details, app version, and what happened. Screenshots are helpful.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>How do I request a feature?</strong>
-                <p>Send your suggestion to <a href="mailto:support@screwitapps.com?subject=Feature%20Request">support@screwitapps.com</a>. We read every message.</p>
+    <main>
+        <section class="pitch reveal" aria-label="Studio pitch">
+            <div class="wrap">
+                <p>Built for nights around the table: clear scores, offline-first play, and apps that stay out of the way.</p>
             </div>
         </section>
-    </div>
+
+        <div id="apps" class="wrap">
+            <section id="scorekeepers" class="section" aria-labelledby="scorekeepers-heading">
+                <div class="section-head">
+                    <h2 id="scorekeepers-heading">Scorekeepers</h2>
+                    <p>Track scores for card, dice, and board games. Download on Google Play or the App Store.</p>
+                </div>
+
+                <ul class="app-grid">
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/zqK3_hp-folBDicvXbILK0qr5qhndCoTugAfWCIy0Ti5B-JIamRZsuVoh_eNxK7Mj67BZDkQdHnhE_aTFzTqjg=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Truco</h3>
+                        <p class="desc">Score tracker for Argentine Truco</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordetruco" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6761754065" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/EhWKOHNgV6-el__5txHoRxlY91fW2APldGkDUnFXCwSJmcZliJlZLrSvkQy2E1yk2_-1KZXkjgDnG3qQYKikeQ=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Chinchón</h3>
+                        <p class="desc">Score tracker for Chinchón</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorchinchon" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6778341655" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/znHQhqlSXh5PcP6R8iGJVocQ65Vio1hKNy_S4Rh7s-h-PbeDAsAtEEY_AwHCABtpDTJ42M_eJDa2vX6AI9cnvuA=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Carioca</h3>
+                        <p class="desc">Score tracker for Carioca rummy</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcarioca" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6765902886" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/K6slzMKucaEVB6S3f2K14oC4sBXoeVY63Ept2l7KVK5sUpvaZU2gVdmgSXqGuy367yQUeWD6aiaeY-pk3up0bw=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Rummy</h3>
+                        <p class="desc">Round-by-round rummy score tracker</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorrummychinchon" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6780179780" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/qblkZBOkB0Ad_EEKl61SPkdTFD6uIegnqp2xh2WFhg1Jgbc5WQD46bmve_KISz0k55nJ9Z2C16KN6yq2_luq1g=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Escoba del 15</h3>
+                        <p class="desc">Score tracker for Escoba</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorescoba" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6781999933" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/ErBstWtgsJrOiyPkKp3aVQxODkNKKAsgIgr_k-juVyJwt4XVtPjcSACn2xeuC-hpMJ31QhiGLpuXXoeMtoX2-Q=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Oh Hell / Pocha / Bazas</h3>
+                        <p class="desc">Score tracker for Oh Hell and trick-bidding card games</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadordebazas" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6789110613" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/o_NYB_sm7vd7pVws4IJW8ZThGpAzXPJn0pJkhT7CUvJIPA5lzh8ikc8ssT7RyHTd86RhcmdOsq343B_wSyarbMs=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Mus</h3>
+                        <p class="desc">Score tracker for Mus — stones, cows, and envites</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadormus" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6792007881" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/JFi09yig0jADGm6tvvHLTuPF2g15XMpICJ4HwiDX_ot3l_IwEoeJkrr4OjgYn1aUiY7YZL96cf9m-SzTa-pO=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Generala &amp; Yatzy</h3>
+                        <p class="desc">Yahtzee, Generala, and Nordic Yatzy score sheets</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorgenerala" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6780535689" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/COne36IAMfcpb58tsqGEe5ZRCPhYlpGtUPh7DPGQpKPNqUx_CGPZFedUhVND4f8PkXqBk7tPTmET4B5vHCNVKA=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Canasta</h3>
+                        <p class="desc">Score tracker for Canasta</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.anotadorcanasta" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6782016917" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/U039s-YpLbBW1tGI984zLc6_NZMDMQ2RnwTq07xzuDIMGb5VqpW_yvqOUY71LYLPtD0teJQkRRO-yA3vo30G=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>7 Wonders Score</h3>
+                        <p class="desc">Score companion for the 7 Wonders board game</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.sevenwonders" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/zqS7LNDZLES8pp30QgMT_kwFNEuIKCCw0w6U3F7GhBXvrxAGpueZduGC4_O6cYC4e1Xe_IcSXCUkDkBAcVMA=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Truco Mineiro Paulista</h3>
+                        <p class="desc">Score tracker for Truco Mineiro and Truco Paulista</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.trucobrasil" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="games" class="section" aria-labelledby="games-heading">
+                <div class="section-head">
+                    <h2 id="games-heading">Games</h2>
+                    <p>Quick play — not scorekeepers.</p>
+                </div>
+
+                <ul class="app-grid">
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/ap2CMItEzQybhG-AN3HRRfCobs3iSil55srkeYNb5qtYqDHs9RhmaM7GzL09gtWHu5OHc3JMrWY_jQewnRQtNA=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Sudoku</h3>
+                        <p class="desc">Classic 9×9 offline — hints, notes, and calm themes</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.sudoku" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6807477667" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/ILWWbOB7zHODD1zsafwcMonJZC3qHjhU_14KFkFkdelCjOq9xzAkFh6vfjhydXdcLtQP1eURzlT839yGCK4k4T8=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Square Crash</h3>
+                        <p class="desc">Neon timing game — crash two squares before you miss</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.squarecrash" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6800270764" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="tools" class="section" aria-labelledby="tools-heading">
+                <div class="section-head">
+                    <h2 id="tools-heading">Tools</h2>
+                    <p>Utilities beyond scorekeeping.</p>
+                </div>
+
+                <ul class="app-grid">
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/5pc1B9iv5JSR7DrPzkDPEUWoVmVeBbfg9ckPYkY50z6vKp0IGdaDoiqRhZbLgi_w2fA4vSkfnMncaHrh_fy_zSc=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>DIY Material Calculator</h3>
+                        <p class="desc">Paint, tile, cement &amp; more — shopping list in real packs</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.materialcalc" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/cq_fNUPrUJiukjWFg14x99MBR7S9vsObeIA6LDoS1nSpJj7PBXg0p94l7CJ4fhId-Hqs7ILU3wLtbGMvmYvJxk4=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Calculadoras AR</h3>
+                        <p class="desc">Argentine salary, Monotributo, and IVA calculators</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.calculadorasar" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="app-tile">
+                        <img src="https://play-lh.googleusercontent.com/fsAe4533PdsYR85q1dTQ6YOoMz-vhUghgWZTxwR3YGaM-Ds2ASf_BCktvwjbTKzYICx_kIJEL5LFg22k0LU2=w240-h480-rw" alt="" width="56" height="56">
+                        <h3>Madrid ZBE</h3>
+                        <p class="desc">Guidance map for Madrid ZBEDEP Distrito Centro</p>
+                        <div class="app-stores">
+                            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.screwitapps.madridzbe" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/google-play-badge.png" alt="Get it on Google Play">
+                            </a>
+                            <a class="store-badge" href="https://apps.apple.com/app/id6805931938" target="_blank" rel="noopener noreferrer">
+                                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="support" class="section" aria-labelledby="support-heading">
+                <div class="section-head">
+                    <h2 id="support-heading">Support</h2>
+                    <p>Need help, found a bug, or want to send feedback? We are happy to help.</p>
+                </div>
+                <div class="support-block">
+                    <p>
+                        <a class="contact-email" href="mailto:support@screwitapps.com?subject=App%20Support%20Request">support@screwitapps.com</a>
+                    </p>
+                    <p><strong>When you write to us, please include:</strong></p>
+                    <ul class="support-list">
+                        <li>The app name (for example, <em>Yahtzee Score Tracker</em>, <em>Truco</em>, or <em>Carioca</em>)</li>
+                        <li>Your device model and OS version (iOS or Android)</li>
+                        <li>The app version (shown in Settings or About inside the app)</li>
+                        <li>A short description of the issue and steps to reproduce it, if applicable</li>
+                    </ul>
+                    <p>We usually reply within 2–3 business days.</p>
+                </div>
+            </section>
+
+            <section id="faq" class="section" aria-labelledby="faq-heading" style="padding-bottom: 24px;">
+                <div class="section-head">
+                    <h2 id="faq-heading">Frequently asked questions</h2>
+                </div>
+                <div class="faq-block">
+                    <div class="faq-item">
+                        <strong>Are your apps free?</strong>
+                        <p>Our apps are free to download and use. Some features may be supported by optional ads.</p>
+                    </div>
+                    <div class="faq-item">
+                        <strong>How do I save a game?</strong>
+                        <p>In scorekeeper apps, use the save option during play to keep your current scores. You can return later and continue where you left off.</p>
+                    </div>
+                    <div class="faq-item">
+                        <strong>How do I view past games?</strong>
+                        <p>In scorekeeper apps, open <em>History</em> from the home screen to review completed matches and scores.</p>
+                    </div>
+                    <div class="faq-item">
+                        <strong>Where is my data stored?</strong>
+                        <p>App data is stored locally on your device. We do not require an account to use our apps.</p>
+                    </div>
+                    <div class="faq-item">
+                        <strong>How do I report a bug?</strong>
+                        <p>Email <a href="mailto:support@screwitapps.com?subject=Bug%20Report">support@screwitapps.com</a> with the app name, device details, app version, and what happened. Screenshots are helpful.</p>
+                    </div>
+                    <div class="faq-item">
+                        <strong>How do I request a feature?</strong>
+                        <p>Send your suggestion to <a href="mailto:support@screwitapps.com?subject=Feature%20Request">support@screwitapps.com</a>. We read every message.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <footer>
         <p><a href="mailto:support@screwitapps.com">support@screwitapps.com</a> · <a href="privacy.html">Privacy</a></p>
         <p>&copy; 2016–2026 Screw it Apps</p>
     </footer>
+
+    <script>
+        (function () {
+            var nav = document.querySelector(".site-nav");
+            var mosaic = document.querySelector(".icon-mosaic");
+            var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            if (nav) {
+                var onScroll = function () {
+                    nav.classList.toggle("is-scrolled", window.scrollY > 8);
+                };
+                onScroll();
+                window.addEventListener("scroll", onScroll, { passive: true });
+            }
+
+            if (!reduce && "IntersectionObserver" in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        var el = entry.target;
+                        var delay = el.dataset.delay || "0";
+                        el.style.transitionDelay = delay + "ms";
+                        el.classList.add("is-inview");
+                        io.unobserve(el);
+                    });
+                }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+                document.querySelectorAll(".section-head, .reveal").forEach(function (el) {
+                    io.observe(el);
+                });
+
+                document.querySelectorAll(".app-grid").forEach(function (grid) {
+                    Array.prototype.forEach.call(grid.children, function (tile, i) {
+                        tile.dataset.delay = String(Math.min(i * 45, 360));
+                        io.observe(tile);
+                    });
+                });
+            } else {
+                document.querySelectorAll(".section-head, .reveal, .app-tile").forEach(function (el) {
+                    el.classList.add("is-inview");
+                });
+            }
+
+            if (!reduce && mosaic && window.matchMedia("(pointer: fine)").matches) {
+                var visual = mosaic.parentElement;
+                var raf = 0;
+                var targetX = 0;
+                var targetY = 0;
+
+                visual.addEventListener("pointermove", function (e) {
+                    var rect = visual.getBoundingClientRect();
+                    var nx = (e.clientX - rect.left) / rect.width - 0.5;
+                    var ny = (e.clientY - rect.top) / rect.height - 0.5;
+                    targetX = nx * 10;
+                    targetY = ny * -8;
+                    if (!raf) {
+                        raf = requestAnimationFrame(function () {
+                            mosaic.style.transform =
+                                "rotateY(" + targetX + "deg) rotateX(" + targetY + "deg) translateZ(0)";
+                            raf = 0;
+                        });
+                    }
+                });
+
+                visual.addEventListener("pointerleave", function () {
+                    mosaic.style.transform = "rotateY(0deg) rotateX(0deg)";
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

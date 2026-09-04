@@ -5,151 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Privacy Policy for Screw it Apps — how we collect, use, and protect information in our mobile apps.">
     <title>Privacy Policy — Screw it Apps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-start: #6a11cb;
-            --brand-end: #2575fc;
-            --text: #1d1d1f;
-            --text-secondary: #6e6e73;
-            --surface: #ffffff;
-            --surface-muted: #f5f5f7;
-            --border: #d2d2d7;
-            --radius: 12px;
-            --max-width: 720px;
+            --ink: #141816;
+            --muted: #5c6560;
+            --paper: #eef1ed;
+            --surface: #f7f9f6;
+            --accent: #1a6b4a;
+            --accent-deep: #0f4531;
+            --line: #d4dbd5;
+            --max: 720px;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --font-display: "Outfit", sans-serif;
+            --font-body: "Figtree", sans-serif;
         }
 
         * { box-sizing: border-box; }
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            color: var(--text);
-            background: var(--surface-muted);
-            line-height: 1.5;
-        }
-
-        a { color: var(--brand-start); }
-
-        .hero {
-            background: linear-gradient(135deg, var(--brand-start), var(--brand-end));
-            color: #fff;
-            padding: 48px 20px 56px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            margin: 0 0 10px;
-            font-size: clamp(1.75rem, 5vw, 2.5rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .hero .tagline {
-            margin: 0 auto;
-            max-width: 36em;
-            font-size: 1.05rem;
-            opacity: 0.92;
+            font-family: var(--font-body);
+            color: var(--ink);
+            background: var(--paper);
             line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .hero .meta {
-            margin: 16px 0 0;
+        a { color: var(--accent); }
+
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 24px;
+            background: color-mix(in srgb, var(--surface) 86%, transparent);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .site-nav .mark {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.08rem;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .site-nav .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-nav .links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        .site-nav .links a:hover { color: var(--ink); }
+
+        .page-hero {
+            padding: 48px 24px 40px;
+            background:
+                radial-gradient(ellipse 70% 80% at 10% 0%, #c5ddd0 0%, transparent 55%),
+                linear-gradient(180deg, #f4f7f3 0%, var(--paper) 100%);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .page-hero-inner {
+            width: min(100%, var(--max));
+            margin: 0 auto;
+        }
+
+        .page-hero h1 {
+            margin: 0 0 12px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(1.85rem, 4.5vw, 2.5rem);
+            letter-spacing: -0.035em;
+            line-height: 1.1;
+        }
+
+        .page-hero .tagline {
+            margin: 0 0 14px;
+            max-width: 36em;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .page-hero .meta {
+            margin: 0;
             font-size: 0.9rem;
-            opacity: 0.85;
+            color: var(--muted);
         }
 
-        .hero a {
-            color: #fff;
-            text-decoration: underline;
-            text-underline-offset: 2px;
+        .page-hero .meta a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
         }
+
+        .page-hero .meta a:hover { text-decoration: underline; }
 
         .main {
-            max-width: var(--max-width);
+            width: min(100%, var(--max));
             margin: 0 auto;
-            padding: 0 20px 48px;
+            padding: 32px 24px 48px;
         }
 
-        .panel {
-            background: var(--surface);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            padding: 28px 24px;
-            margin-top: 24px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        .section {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
         }
 
-        .panel:first-child {
-            margin-top: -28px;
-        }
+        .section:last-child { border-bottom: none; }
 
-        .panel h2 {
+        .section h2 {
             margin: 0 0 12px;
-            font-size: 1.35rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
         }
 
-        .panel h3 {
+        .section h3 {
             margin: 20px 0 8px;
-            font-size: 1.05rem;
+            font-size: 1.02rem;
             font-weight: 600;
         }
 
-        .panel h3:first-of-type {
-            margin-top: 0;
-        }
+        .section h3:first-of-type { margin-top: 4px; }
 
-        .panel p {
+        .section p {
             margin: 0 0 12px;
-            font-size: 0.95rem;
-            color: var(--text);
+            font-size: 0.96rem;
         }
 
-        .panel p:last-child {
-            margin-bottom: 0;
-        }
+        .section p:last-child { margin-bottom: 0; }
 
-        .panel ul {
+        .section ul {
             margin: 0 0 12px;
             padding-left: 1.25rem;
-            font-size: 0.95rem;
+            font-size: 0.96rem;
         }
 
-        .panel li {
-            margin-bottom: 6px;
-        }
-
-        .panel li:last-child {
-            margin-bottom: 0;
-        }
+        .section li { margin-bottom: 6px; }
+        .section li:last-child { margin-bottom: 0; }
 
         footer {
             text-align: center;
-            padding: 32px 20px 40px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            padding: 36px 24px 48px;
+            font-size: 0.88rem;
+            color: var(--muted);
+            border-top: 1px solid var(--line);
+            background: var(--surface);
         }
 
-        footer a { color: var(--text-secondary); }
-        footer a:hover { color: var(--brand-start); }
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 520px) {
+            .site-nav { padding: 12px 16px; }
+            .main { padding: 24px 16px 40px; }
+            .page-hero { padding: 36px 16px 32px; }
+        }
     </style>
 </head>
 <body>
-    <header class="hero">
-        <h1>Privacy Policy</h1>
-        <p class="tagline">This policy describes how Screw it Apps (“we,” “us,” or “our”) handles information when you use our mobile applications and this website.</p>
-        <p class="meta">Last updated: June 29, 2026 · <a href="index.html">Support &amp; downloads</a></p>
+    <nav class="site-nav" aria-label="Primary">
+        <a class="mark" href="index.html">Screw it</a>
+        <ul class="links">
+            <li><a href="index.html#apps">Apps</a></li>
+            <li><a href="index.html#support">Support</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-hero-inner">
+            <h1>Privacy Policy</h1>
+            <p class="tagline">This policy describes how Screw it Apps (“we,” “us,” or “our”) handles information when you use our mobile applications and this website.</p>
+            <p class="meta">Last updated: June 29, 2026 · <a href="index.html">Back to home</a></p>
+        </div>
     </header>
 
     <div class="main">
-        <section class="panel">
+        <section class="section">
             <h2>Introduction</h2>
             <p>Screw it Apps develops scorekeeper and companion apps for Android and iOS. We respect your privacy and aim to collect only what is needed to provide, improve, and monetize our apps responsibly.</p>
             <p>By using our apps or visiting this site, you agree to this Privacy Policy. If you do not agree, please do not use our services. For questions, contact us at <a href="mailto:support@screwitapps.com">support@screwitapps.com</a>.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Information we collect</h2>
             <p>The type of information depends on how you use our apps and your device settings. We may collect the following categories:</p>
 
@@ -166,7 +233,7 @@
             <p>Apps that show ads may use Google AdMob or similar partners. They may collect or receive advertising identifiers (such as Google Advertising ID or Apple’s Identifier for Advertisers), IP address, device information, and data about ad interactions to deliver and measure ads, prevent fraud, and comply with consent requirements. Where required by law, we request your consent before personalized advertising.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>How we use information</h2>
             <p>We use the information described above to:</p>
             <ul>
@@ -180,7 +247,7 @@
             <p>We do not sell your personal information. We process data based on legitimate interests (app operation and improvement), performance of a contract (providing the app), consent (where required for ads or certain analytics), and legal obligations.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Third-party services</h2>
             <p>Our apps may integrate services operated by third parties. Their use of data is governed by their own policies. Common integrations include:</p>
             <ul>
@@ -192,7 +259,7 @@
             <p>These providers may process data in the United States and other countries. We choose partners that help us meet platform and legal requirements for mobile apps.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Advertising and cookies</h2>
             <p>Some of our apps display ads. Ad partners may use cookies, mobile advertising identifiers, and similar technologies to show ads, limit how often you see an ad, and measure campaign effectiveness.</p>
             <p><strong>European Economic Area (EEA), UK, and Switzerland:</strong> Where required, we use a consent mechanism (such as Google’s User Messaging Platform / GDPR consent flow for AdMob) so you can choose whether to allow personalized advertising and related storage. You can change your choices later in the app or through your device settings.</p>
@@ -200,43 +267,43 @@
             <p>This website is primarily informational. If we use analytics on the site in the future, we will update this policy accordingly.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Data retention</h2>
             <p>Local app data remains on your device until you delete it or uninstall the app. Crash logs and analytics are typically retained for a limited period needed for debugging and trend analysis, after which they are deleted or aggregated. Advertising partners retain data according to their policies and legal requirements.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Security</h2>
             <p>We use reasonable technical and organizational measures appropriate to the nature of the data we process. No method of transmission or storage is completely secure; we cannot guarantee absolute security.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Children’s privacy</h2>
             <p>Our apps are not directed at children under 13 (or the minimum age required in your country). We do not knowingly collect personal information from children. If you believe a child has provided us personal information, contact us at <a href="mailto:support@screwitapps.com">support@screwitapps.com</a> and we will take steps to delete it where appropriate.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Your rights (GDPR and similar laws)</h2>
             <p>If you are in the EEA, UK, or other regions with privacy laws, you may have the right to access, rectify, erase, restrict, or object to certain processing of your personal data, and to data portability where applicable. Where processing is based on consent, you may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.</p>
             <p>You may also lodge a complaint with your local data protection authority. To exercise your rights, email <a href="mailto:support@screwitapps.com">support@screwitapps.com</a>. We may need to verify your request and will respond within the timeframes required by law.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>International transfers</h2>
             <p>We are based in Argentina. Data may be processed in Argentina and in other countries where our service providers operate (including the United States). When data is transferred internationally, we rely on appropriate safeguards where required, such as standard contractual clauses or provider certifications.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Links to other sites</h2>
             <p>Our apps or website may link to third-party sites (for example, app stores or support pages). We are not responsible for the privacy practices of those sites. We encourage you to read their policies.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Changes to this policy</h2>
             <p>We may update this Privacy Policy from time to time. We will post the revised policy on this page and update the “Last updated” date. Continued use of our apps after changes means you accept the updated policy where permitted by law.</p>
         </section>
 
-        <section class="panel">
+        <section class="section">
             <h2>Contact</h2>
             <p>For privacy questions, requests, or complaints:</p>
             <p><strong>Screw it Apps</strong><br>
