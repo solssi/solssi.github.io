@@ -16,18 +16,18 @@
       "subtitle": "Bid and trick scorekeeper"
     },
     {
-      "packageName": "com.screwitapps.anotadormus",
-      "campaignSlug": "mus",
-      "name": "Mus",
-      "iconUrl": "https://play-lh.googleusercontent.com/o_NYB_sm7vd7pVws4IJW8ZThGpAzXPJn0pJkhT7CUvJIPA5lzh8ikc8ssT7RyHTd86RhcmdOsq343B_wSyarbMs=w240-h480-rw",
-      "subtitle": "Stones and cows scorekeeper"
-    },
-    {
       "packageName": "com.screwitapps.anotadorcanasta",
       "campaignSlug": "canasta",
       "name": "Canasta",
       "iconUrl": "https://play-lh.googleusercontent.com/COne36IAMfcpb58tsqGEe5ZRCPhYlpGtUPh7DPGQpKPNqUx_CGPZFedUhVND4f8PkXqBk7tPTmET4B5vHCNVKA=w240-h480-rw",
       "subtitle": "Canasta scorekeeper"
+    },
+    {
+      "packageName": "com.screwitapps.anotadormus",
+      "campaignSlug": "mus",
+      "name": "Mus",
+      "iconUrl": "https://play-lh.googleusercontent.com/o_NYB_sm7vd7pVws4IJW8ZThGpAzXPJn0pJkhT7CUvJIPA5lzh8ikc8ssT7RyHTd86RhcmdOsq343B_wSyarbMs=w240-h480-rw",
+      "subtitle": "Stones and cows scorekeeper"
     }
   ]
 }

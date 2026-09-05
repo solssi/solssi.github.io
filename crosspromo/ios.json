@@ -16,18 +16,18 @@
       "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/d1/02/19d102a1-8ffb-6e5e-e498-cd48e75c8aca/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
     },
     {
-      "appStoreId": "6792007881",
-      "campaignSlug": "mus",
-      "name": "Mus",
-      "subtitle": "Stones and cows scorekeeper",
-      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/da/d9/28/dad9285b-cae2-286e-ead3-bfcf9539c858/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
-    },
-    {
       "appStoreId": "6782016917",
       "campaignSlug": "canasta",
       "name": "Canasta",
       "subtitle": "Canasta scorekeeper",
       "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7d/93/8a/7d938a3a-0495-beb8-547f-5e65287721a5/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6792007881",
+      "campaignSlug": "mus",
+      "name": "Mus",
+      "subtitle": "Stones and cows scorekeeper",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/da/d9/28/dad9285b-cae2-286e-ead3-bfcf9539c858/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
     }
   ]
 }
