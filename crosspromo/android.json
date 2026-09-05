@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "apps": [
+    {
+      "packageName": "com.screwitapps.anotadordetruco",
+      "campaignSlug": "truco",
+      "name": "Truco Argentino",
+      "iconUrl": "https://play-lh.googleusercontent.com/zqK3_hp-folBDicvXbILK0qr5qhndCoTugAfWCIy0Ti5B-JIamRZsuVoh_eNxK7Mj67BZDkQdHnhE_aTFzTqjg=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.anotadorchinchon",
+      "campaignSlug": "chinchon",
+      "name": "Chinchon",
+      "iconUrl": "https://play-lh.googleusercontent.com/EhWKOHNgV6-el__5txHoRxlY91fW2APldGkDUnFXCwSJmcZliJlZLrSvkQy2E1yk2_-1KZXkjgDnG3qQYKikeQ=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.anotadorcarioca",
+      "campaignSlug": "carioca",
+      "name": "Carioca",
+      "iconUrl": "https://play-lh.googleusercontent.com/znHQhqlSXh5PcP6R8iGJVocQ65Vio1hKNy_S4Rh7s-h-PbeDAsAtEEY_AwHCABtpDTJ42M_eJDa2vX6AI9cnvuA=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.anotadorrummychinchon",
+      "campaignSlug": "rummy",
+      "name": "Rummy",
+      "iconUrl": "https://play-lh.googleusercontent.com/K6slzMKucaEVB6S3f2K14oC4sBXoeVY63Ept2l7KVK5sUpvaZU2gVdmgSXqGuy367yQUeWD6aiaeY-pk3up0bw=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.anotadorescoba",
+      "campaignSlug": "escoba",
+      "name": "Escoba",
+      "iconUrl": "https://play-lh.googleusercontent.com/qblkZBOkB0Ad_EEKl61SPkdTFD6uIegnqp2xh2WFhg1Jgbc5WQD46bmve_KISz0k55nJ9Z2C16KN6yq2_luq1g=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.anotadordebazas",
+      "campaignSlug": "bazas",
+      "name": "Oh Hell",
+      "iconUrl": "https://play-lh.googleusercontent.com/ErBstWtgsJrOiyPkKp3aVQxODkNKKAsgIgr_k-juVyJwt4XVtPjcSACn2xeuC-hpMJ31QhiGLpuXXoeMtoX2-Q=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.anotadormus",
+      "campaignSlug": "mus",
+      "name": "Mus",
+      "iconUrl": "https://play-lh.googleusercontent.com/o_NYB_sm7vd7pVws4IJW8ZThGpAzXPJn0pJkhT7CUvJIPA5lzh8ikc8ssT7RyHTd86RhcmdOsq343B_wSyarbMs=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.anotadorgenerala",
+      "campaignSlug": "generala",
+      "name": "Yatzy / Generala",
+      "iconUrl": "https://play-lh.googleusercontent.com/JFi09yig0jADGm6tvvHLTuPF2g15XMpICJ4HwiDX_ot3l_IwEoeJkrr4OjgYn1aUiY7YZL96cf9m-SzTa-pO=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.anotadorcanasta",
+      "campaignSlug": "canasta",
+      "name": "Canasta",
+      "iconUrl": "https://play-lh.googleusercontent.com/COne36IAMfcpb58tsqGEe5ZRCPhYlpGtUPh7DPGQpKPNqUx_CGPZFedUhVND4f8PkXqBk7tPTmET4B5vHCNVKA=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.sevenwonders",
+      "campaignSlug": "wonders",
+      "name": "7 Wonders",
+      "iconUrl": "https://play-lh.googleusercontent.com/U039s-YpLbBW1tGI984zLc6_NZMDMQ2RnwTq07xzuDIMGb5VqpW_yvqOUY71LYLPtD0teJQkRRO-yA3vo30G=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.trucobrasil",
+      "campaignSlug": "truco_brasil",
+      "name": "Truco Mineiro Paulista",
+      "iconUrl": "https://play-lh.googleusercontent.com/zqS7LNDZLES8pp30QgMT_kwFNEuIKCCw0w6U3F7GhBXvrxAGpueZduGC4_O6cYC4e1Xe_IcSXCUkDkBAcVMA=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.sudoku",
+      "campaignSlug": "sudoku",
+      "name": "Sudoku",
+      "iconUrl": "https://play-lh.googleusercontent.com/ap2CMItEzQybhG-AN3HRRfCobs3iSil55srkeYNb5qtYqDHs9RhmaM7GzL09gtWHu5OHc3JMrWY_jQewnRQtNA=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.squarecrash",
+      "campaignSlug": "square_crash",
+      "name": "Square Crash",
+      "iconUrl": "https://play-lh.googleusercontent.com/ILWWbOB7zHODD1zsafwcMonJZC3qHjhU_14KFkFkdelCjOq9xzAkFh6vfjhydXdcLtQP1eURzlT839yGCK4k4T8=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.materialcalc",
+      "campaignSlug": "material_calc",
+      "name": "DIY Material Calculator",
+      "iconUrl": "https://play-lh.googleusercontent.com/5pc1B9iv5JSR7DrPzkDPEUWoVmVeBbfg9ckPYkY50z6vKp0IGdaDoiqRhZbLgi_w2fA4vSkfnMncaHrh_fy_zSc=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.calculadorasar",
+      "campaignSlug": "calculadoras_ar",
+      "name": "Calculadoras AR",
+      "iconUrl": "https://play-lh.googleusercontent.com/cq_fNUPrUJiukjWFg14x99MBR7S9vsObeIA6LDoS1nSpJj7PBXg0p94l7CJ4fhId-Hqs7ILU3wLtbGMvmYvJxk4=w240-h480-rw"
+    },
+    {
+      "packageName": "com.screwitapps.madridzbe",
+      "campaignSlug": "madrid_zbe",
+      "name": "Madrid ZBE",
+      "iconUrl": "https://play-lh.googleusercontent.com/fsAe4533PdsYR85q1dTQ6YOoMz-vhUghgWZTxwR3YGaM-Ds2ASf_BCktvwjbTKzYICx_kIJEL5LFg22k0LU2=w240-h480-rw"
+    }
+  ]
+}

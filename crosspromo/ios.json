@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "apps": [
+    {
+      "appStoreId": "6761754065",
+      "campaignSlug": "truco",
+      "name": "Truco",
+      "subtitle": "Fast scorekeeper and counter",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a9/59/f2/a959f268-03ce-d56e-294d-638a9270be08/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6765902886",
+      "campaignSlug": "carioca",
+      "name": "Carioca",
+      "subtitle": "Carioca rummy scorekeeper",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/38/4f/05/384f05f0-fabf-6dcb-1ad7-baf95d10a60a/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6778341655",
+      "campaignSlug": "chinchon",
+      "name": "Chinchon",
+      "subtitle": "Chinch\u00f3n scorekeeper",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b1/14/1d/b1141d56-64f3-d7f3-2808-ddecbc298b24/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6780179780",
+      "campaignSlug": "rummy",
+      "name": "Rummy",
+      "subtitle": "Gin Rummy scorekeeper",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/3e/6d/483e6d7b-b5a6-8fa1-e8b2-0f7ee96c173f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6780535689",
+      "campaignSlug": "generala",
+      "name": "Generala",
+      "subtitle": "Yahtzee and Generala scores",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2a/59/ee/2a59ee7c-c4f6-1934-d7e9-8666e37d9b38/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6781999933",
+      "campaignSlug": "escoba",
+      "name": "Escoba",
+      "subtitle": "Escoba del 15 scorekeeper",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/57/66/d0/5766d0ab-1526-47ee-2d0f-90a1fa3c1e74/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6782016917",
+      "campaignSlug": "canasta",
+      "name": "Canasta",
+      "subtitle": "Canasta scorekeeper",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7d/93/8a/7d938a3a-0495-beb8-547f-5e65287721a5/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6789110613",
+      "campaignSlug": "bazas",
+      "name": "Oh Hell",
+      "subtitle": "Bid and trick scorekeeper",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/19/d1/02/19d102a1-8ffb-6e5e-e498-cd48e75c8aca/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6792007881",
+      "campaignSlug": "mus",
+      "name": "Mus",
+      "subtitle": "Stones and cows scorekeeper",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/da/d9/28/dad9285b-cae2-286e-ead3-bfcf9539c858/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6807477667",
+      "campaignSlug": "sudoku",
+      "name": "Sudoku",
+      "subtitle": "Classic 9\u00d79 offline puzzle",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/2c/b8/bb/2cb8bb18-4caf-fe04-3b28-aa0a6e255270/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6800270764",
+      "campaignSlug": "square_crash",
+      "name": "Square Crash",
+      "subtitle": "Neon timing arcade game",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/aa/fd/db/aafddb1f-1c26-4fb8-5e46-5ab449ec8796/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "appStoreId": "6805931938",
+      "campaignSlug": "madrid_zbe",
+      "name": "Madrid ZBE",
+      "subtitle": "Madrid ZBEDEP guidance map",
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/60/33/57/603357c7-424c-ac05-46ad-e1cfcc950539/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    }
+  ]
+}
